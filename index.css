@@ -1,166 +1,152 @@
 body {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5rem;
-    background-color: rgb(39, 41, 43);
-    display: flex;
-    flex-wrap: wrap;
-
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5rem;
+  background-color: rgb(39, 41, 43);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .logo {
-    width: 200px;
+  width: 200px;
 }
 
 .header {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-text {
-
-    color: white;
+  color: white;
 }
 
 h2 {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
-    color: white;
-    background-color: rgb(39, 41, 43);
-    text-decoration: none;
-    border: solid 2px white;
-    width: 80px;
-    margin-left: 30px;
-    border-radius: 20px;
-
-
+  color: white;
+  background-color: rgb(39, 41, 43);
+  text-decoration: none;
+  border: solid 2px white;
+  width: 80px;
+  margin-left: 30px;
+  border-radius: 20px;
 }
 
 .launch-card,
 .rocket-card,
 .mission-card {
-    display: flex;
-    flex-wrap: wrap;
-    border: 3px white solid;
-    border-radius: 2px;
-    overflow: hidden;
-    width: 60%;
-    height: 400px;
-    margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px white solid;
+  border-radius: 2px;
+  overflow: hidden;
+  width: 60%;
+  height: 400px;
+  margin: 10px auto;
 }
 
 .launch-img {
-    width: 100%;
-    height: 100%;
-    padding: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
-
 
 .patch-img,
 .rocket-logo {
-    width: 92%;
-    padding-left: 20px;
+  width: 92%;
+  padding-left: 20px;
 }
-
 
 .img-div,
 .logo-img-div,
 .patch-img-div {
-    width: 35%;
-    height: 100%;
-    background-color: rgb(20, 20, 20);
-    display: flex;
-    align-items: center;
+  width: 35%;
+  height: 100%;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  align-items: center;
 }
 
 .info-div,
 .rocket-info,
 .mission-description {
-    width: 60%;
-    height: 100%;
-    color: white;
-    background-color: rgb(20, 20, 20);
-    display: flex;
-    flex-flow: column wrap;
-    text-align: center;
-    padding: 20px;
-  
+  width: 60%;
+  height: 100%;
+  color: white;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  padding: 20px;
+  flex: 1;
 }
 
 .rocket-info,
 .mission-description {
-    justify-content: center;
-    align-items: center;
-
+  justify-content: center;
+  align-items: center;
 }
 
 .name-status {
-    display: flex;
-    margin: 20px;
-
+  display: flex;
+  margin: 20px;
 }
-
-
 
 .status-green,
 .status-red {
-    background-color: green;
-    border-radius: 40%;
-    width: 40px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: green;
+  border-radius: 40%;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .status-red {
-    background-color: red;
+  background-color: red;
 }
 
 .mission-name {
-    flex: 1;
-    font-size: 1.5rem;
+  flex: 1;
+  font-size: 1.5rem;
 }
 
-
-
 .countdown {
-    font-size: 2.5rem;
-    margin: 50px 30px 15px;
+  font-size: 2.5rem;
+  margin: 50px 30px 15px;
 }
 
 .more-info {
-    width: 150px;
-    margin: 61.5px auto;
-    background-color: rgb(66, 65, 65);
-    border-radius: 20px;
-    border: 2px white solid;
-    cursor: pointer;
+  width: 150px;
+  margin: 61.5px auto;
+  background-color: rgb(66, 65, 65);
+  border-radius: 20px;
+  border: 2px white solid;
+  cursor: pointer;
 }
 
 .more-info-div {
-    color: white;
-    display: flex;
-    flex-flow: column wrap;
+  color: white;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 #map {
-    width: 60%;
-    height: 400px;
+  width: 60%;
+  height: 400px;
 }
 
 #map {
-    width: 60%;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-
+  width: 60%;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
