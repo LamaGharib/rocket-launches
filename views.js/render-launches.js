@@ -5,9 +5,7 @@ import { creatEl } from "./creat.js";
 
 export const renderLauncher = () => {
   const header = creatEl("div", "header");
-
   const headerImg = creatEl("img", "logo");
-
   headerImg.src =
     "https://joonto.com/wp-content/uploads/2020/11/b7d71cfa04225c00caa8530df01ea1e6.png";
   header.appendChild(headerImg);
@@ -18,8 +16,6 @@ export const renderLauncher = () => {
   document.body.appendChild(header);
 
   launches.forEach((launch) => {
-    const launchEL = creatEl("div", "launch-card");
-
     const launchName = launch.name;
     const provider = launch.launch_service_provider.name;
     const status = launch.status.abbrev;
@@ -31,8 +27,6 @@ export const renderLauncher = () => {
     //adding the clock
     const timeEl = clock(deadline);
 
-    //creating the countdown
-    const countDown = creatEl("div", "countdown");
     countDown.textContent = ` T- ${timeEl.days}:${timeEl.hours}:${timeEl.minutes}:${timeEl.seconds}`;
 
     //updating the time
@@ -45,6 +39,8 @@ export const renderLauncher = () => {
       }
     }, 1000);
     //creating Dom elemnents and adding className
+    const launchEL = creatEl("div", "launch-card");
+    const countDown = creatEl("div", "countdown");
     const imgDiv = creatEl("div", "img-div");
     const image = creatEl("img", "launch-img");
     const infoDiv = creatEl("div", "info-div");
