@@ -1,24 +1,25 @@
 import { launches } from "../main.js";
 import { clock } from "./clock.js";
 import { infoListener } from "./render-more-info.js";
+import { creatEl } from "./creat.js";
 
 export const renderLauncher = () => {
-  const header = document.createElement("div");
-  header.className = "header";
-  const headerImg = document.createElement("img");
-  headerImg.className = "logo";
+  const header = creatEl("div", "header");
+
+  const headerImg = creatEl("img", "logo");
+
   headerImg.src =
     "https://joonto.com/wp-content/uploads/2020/11/b7d71cfa04225c00caa8530df01ea1e6.png";
   header.appendChild(headerImg);
-  const headerText = document.createElement("h1");
-  headerText.className = "header-text";
+  const headerText = creatEl("h1", "header-text");
+
   headerText.textContent = "Upcoming Launches";
   header.appendChild(headerText);
   document.body.appendChild(header);
 
   launches.forEach((launch) => {
-    const launchEL = document.createElement("div");
-    launchEL.className = "launch-card";
+    const launchEL = creatEl("div", "launch-card");
+
     const launchName = launch.name;
     const provider = launch.launch_service_provider.name;
     const status = launch.status.abbrev;
@@ -29,9 +30,9 @@ export const renderLauncher = () => {
     const img = launch.image;
     //adding the clock
     const timeEl = clock(deadline);
+
     //creating the countdown
-    const countDown = document.createElement("div");
-    countDown.className = "countdown";
+    const countDown = creatEl("div", "countdown");
     countDown.textContent = ` T- ${timeEl.days}:${timeEl.hours}:${timeEl.minutes}:${timeEl.seconds}`;
 
     //updating the time
@@ -43,55 +44,46 @@ export const renderLauncher = () => {
         clearInterval(updateClock);
       }
     }, 1000);
-
-    const imgDiv = document.createElement("div");
-    imgDiv.className = "img-div";
-    launchEL.appendChild(imgDiv);
-    const image = document.createElement("img");
-    image.src = img;
-    image.className = "launch-img";
-    imgDiv.appendChild(image);
-
-    const infoDiv = document.createElement("div");
-    infoDiv.className = "info-div";
-    launchEL.appendChild(infoDiv);
-
-    const nameAndStatusDiv = document.createElement("div");
-    nameAndStatusDiv.className = "name-status";
-    infoDiv.appendChild(nameAndStatusDiv);
-
-    const missionName = document.createElement("div");
-    missionName.textContent = launchName;
-    missionName.className = "mission-name";
-
-    const statusDiv = document.createElement("div");
-    const statusSpan = document.createElement("div");
-    statusDiv.appendChild(statusSpan);
-    statusSpan.textContent = status;
-    statusSpan.className = "status-span";
+    //creating Dom elemnents and adding className
+    const imgDiv = creatEl("div", "img-div");
+    const image = creatEl("img", "launch-img");
+    const infoDiv = creatEl("div", "info-div");
+    const nameAndStatusDiv = creatEl("div", "name-status");
+    const missionName = creatEl("div", "mission-name");
+    const statusDiv = creatEl("div", "");
+    const statusSpan = creatEl("div", "status-span");
     status === "Go"
       ? (statusDiv.className = "status-green")
       : (statusDiv.className = "status-red");
+    const providerName = creatEl("div", "");
+    const padName = creatEl("div", "");
+    const launchTiming = creatEl("div", "launch-date");
+    const moreInfo = creatEl("div", "more-info");
+
+    //adding values
+    image.src = img;
+    missionName.textContent = launchName;
+    padName.textContent = pad;
+    providerName.textContent = provider;
+    launchTiming.textContent = launchTime;
+    //appending
+
     nameAndStatusDiv.appendChild(missionName);
     nameAndStatusDiv.appendChild(statusDiv);
-
-    const providerName = document.createElement("div");
-    providerName.textContent = provider;
+    launchEL.appendChild(imgDiv);
+    imgDiv.appendChild(image);
+    launchEL.appendChild(infoDiv);
+    infoDiv.appendChild(nameAndStatusDiv);
+    statusDiv.appendChild(statusSpan);
+    statusSpan.textContent = status;
     infoDiv.appendChild(providerName);
-
-    const padName = document.createElement("div");
-    padName.textContent = pad;
     infoDiv.appendChild(padName);
-
     infoDiv.appendChild(countDown);
-    const launchTiming = document.createElement("div");
-    launchTiming.className = "launch-date";
-    launchTiming.textContent = launchTime;
     infoDiv.appendChild(launchTiming);
     // more info div ,adding listener to make the second fetch
-    const moreInfo = document.createElement("div");
+
     moreInfo.textContent = "More Info";
-    moreInfo.className = "more-info";
+
     moreInfo.setAttribute("data-value", launchInfo);
     moreInfo.addEventListener("click", infoListener);
     infoDiv.appendChild(moreInfo);
