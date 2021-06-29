@@ -101,7 +101,7 @@ a {
 
 .status-green,
 .status-red {
-  background-color: green;
+  background-color: rgb(6, 168, 6);
   border-radius: 40%;
   width: 40px;
   height: 30px;
@@ -137,11 +137,6 @@ a {
   color: white;
   display: flex;
   flex-flow: column wrap;
-}
-
-#map {
-  width: 70%;
-  height: 400px;
 }
 
 #map {
