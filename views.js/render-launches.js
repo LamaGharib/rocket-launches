@@ -26,7 +26,7 @@ export const renderLauncher = () => {
     const img = launch.image;
     //adding the clock
     const timeEl = clock(deadline);
-
+    const countDown = creatEl("div", "countdown");
     countDown.textContent = ` T- ${timeEl.days}:${timeEl.hours}:${timeEl.minutes}:${timeEl.seconds}`;
 
     //updating the time
@@ -40,7 +40,7 @@ export const renderLauncher = () => {
     }, 1000);
     //creating Dom elemnents and adding className
     const launchEL = creatEl("div", "launch-card");
-    const countDown = creatEl("div", "countdown");
+
     const imgDiv = creatEl("div", "img-div");
     const image = creatEl("img", "launch-img");
     const infoDiv = creatEl("div", "info-div");
