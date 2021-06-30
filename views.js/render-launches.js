@@ -16,6 +16,9 @@ export const renderLauncher = () => {
   document.body.appendChild(header);
 
   launches.forEach((launch) => {
+    if (launch.status.abbrev === "Success") {
+      return;
+    }
     const launchName = launch.name;
     const provider = launch.launch_service_provider.name;
     const status = launch.status.abbrev;
@@ -38,7 +41,7 @@ export const renderLauncher = () => {
         clearInterval(updateClock);
       }
     }, 1000);
-    //creating Dom elemnents and adding className
+    //creating Dom elements and adding className
     const launchEL = creatEl("div", "launch-card");
 
     const imgDiv = creatEl("div", "img-div");
@@ -62,6 +65,7 @@ export const renderLauncher = () => {
     padName.textContent = pad;
     providerName.textContent = provider;
     launchTiming.textContent = launchTime;
+    statusSpan.textContent = status;
     //appending
 
     nameAndStatusDiv.appendChild(missionName);
@@ -71,7 +75,7 @@ export const renderLauncher = () => {
     launchEL.appendChild(infoDiv);
     infoDiv.appendChild(nameAndStatusDiv);
     statusDiv.appendChild(statusSpan);
-    statusSpan.textContent = status;
+
     infoDiv.appendChild(providerName);
     infoDiv.appendChild(padName);
     infoDiv.appendChild(countDown);

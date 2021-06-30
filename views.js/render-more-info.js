@@ -14,7 +14,7 @@ export const infoListener = async (e) => {
   const lat = f.pad.latitude;
   const moreInfoDiv = creatEl("div", "more-info-div");
 
-  const back = creatEl("div", "");
+  const back = creatEl("div", "back");
   back.textContent = "< back";
   back.addEventListener("click", async () => {
     document.body.innerHTML = "";
