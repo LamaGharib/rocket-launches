@@ -1,4 +1,4 @@
-import { fetchData } from "../fetch.js";
+import { fetchData } from "./fetch.js";
 import { renderLauncher } from "./views.js/render-launches.js";
 export let launches = [];
 export const main = async () => {
